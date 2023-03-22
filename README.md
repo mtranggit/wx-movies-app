@@ -15,3 +15,15 @@ Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and 
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
+
+### Steps
+
+- Create empty nx workspace: `npx create-nx-workspace@latest wx-movies-app --preset=empty`
+
+- Install React plugin: `npm i -D @nrwl/react`
+
+- Setup Micro Frontends with host shell and remotes movies and playlist `npx nx g @nrwl/react:host shell --remotes=movies,playlist`
+
+- Add **Mantine** `npm install @mantine/core @mantine/hooks @emotion/react`
+
+- Create a new app-shell component in ui libs directory `npx nx g @nrwl/react:lib app-shell  --directory=ui`
