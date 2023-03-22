@@ -1,13 +1,11 @@
 import React from "react";
 import { Box, Title, Grid } from "@mantine/core";
 
-// import { useStore } from "store";
 import { MovieCard } from "@wx-movies-app/ui/movie-card";
-import { Movie } from "@wx-movies-app/movies-content";
+import { useMovieStore } from "@wx-movies-app/movie-store";
 
 export const Playlist = () => {
-  // const { movies } = useStore();
-  const movies: Movie[] = [];
+  const { movies } = useMovieStore();
   return (
     <>
       <Box>
@@ -19,8 +17,8 @@ export const Playlist = () => {
           gap: "1rem",
         }}
       >
-        {movies.map((movie) => (
-          <MovieCard {...movie} key={movie.title} />
+        {movies.map((movie, i) => (
+          <MovieCard {...movie} key={`${movie.title}-${i}`} />
         ))}
       </Grid>
     </>

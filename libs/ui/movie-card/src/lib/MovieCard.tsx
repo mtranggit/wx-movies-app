@@ -7,8 +7,7 @@ import {
   Group,
   useMantineTheme,
 } from "@mantine/core";
-
-// import { useStore } from "store";
+import { useMovieStore } from "@wx-movies-app/movie-store";
 
 export const MovieCard: React.FunctionComponent<{
   title: string;
@@ -16,9 +15,7 @@ export const MovieCard: React.FunctionComponent<{
   showAddButton?: boolean;
 }> = ({ title, image, showAddButton }) => {
   const theme = useMantineTheme();
-  // const { addMovie } = useStore();
-
-  const addMovie = ({title, image }: {title: string; image: string;}) => console.log('Add movie', {title, image});
+  const { addMovie } = useMovieStore();
 
   return (
     <Card shadow="sm" p="lg">

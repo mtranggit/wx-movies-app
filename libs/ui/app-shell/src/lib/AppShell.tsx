@@ -10,8 +10,7 @@ import {
   Group,
   Text,
 } from "@mantine/core";
-
-// import { useStore } from "store";
+import { useMovieStore } from "@wx-movies-app/movie-store";
 
 export type Route = {
   element: React.FunctionComponent;
@@ -56,8 +55,7 @@ export const AppShell: React.FunctionComponent<{
   navLinks: NavLink[];
   colorScheme?: "light" | "dark";
 }> = ({ title, colorScheme, routes, navLinks }) => {
-  // const { movies } = useStore();
-  const movies = [];
+  const { movies } = useMovieStore();
 
   return (
       <BrowserRouter>

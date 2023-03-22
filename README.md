@@ -33,3 +33,12 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 - Create a new movies-content component in libs directory `npx nx g @nrwl/react:lib movies-content`
 
 - Create a new playlist-content component in libs directory `npx nx g @nrwl/react:lib playlist-content`
+
+- Add Zustand for shared app state `npm i zustand`
+
+- Create a new movie-store component in libs directory `npx nx g @nrwl/react:lib movie-store`
+
+To serve our Micro Frontends app in development mode:
+
+- App shell with static build movies, playlist `npx nx serve shell`
+- App shell with dynamic build movies, playlist `npx nx serve shell --devRemotes=movies,playlist`
