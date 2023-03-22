@@ -2,7 +2,12 @@ import React from "react";
 import { Grid, Title } from "@mantine/core";
 import { MovieCard } from "@wx-movies-app/ui/movie-card";
 
-const movies = [
+export type Movie = {
+  title: string;
+  image: string;
+}
+
+const movies: Movie[] = [
   {
     title: "Halo",
     image:

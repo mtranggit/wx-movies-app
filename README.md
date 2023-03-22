@@ -29,3 +29,7 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 - Create a new app-shell component in ui libs directory `npx nx g @nrwl/react:lib app-shell  --directory=ui`
 
 - Create a new movie-card component in ui libs directory `npx nx g @nrwl/react:lib movie-card  --directory=ui`
+
+- Create a new movies-content component in libs directory `npx nx g @nrwl/react:lib movies-content`
+
+- Create a new playlist-content component in libs directory `npx nx g @nrwl/react:lib playlist-content`
