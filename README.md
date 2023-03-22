@@ -27,3 +27,5 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 - Add **Mantine** `npm install @mantine/core @mantine/hooks @emotion/react`
 
 - Create a new app-shell component in ui libs directory `npx nx g @nrwl/react:lib app-shell  --directory=ui`
+
+- Create a new movie-card component in ui libs directory `npx nx g @nrwl/react:lib movie-card  --directory=ui`

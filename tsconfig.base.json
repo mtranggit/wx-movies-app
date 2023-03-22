@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@wx-movies-app/ui/app-shell": ["libs/ui/app-shell/src/index.ts"]
+      "@wx-movies-app/movies-content": ["libs/movies-content/src/index.ts"],
+      "@wx-movies-app/ui/app-shell": ["libs/ui/app-shell/src/index.ts"],
+      "@wx-movies-app/ui/movie-card": ["libs/ui/movie-card/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

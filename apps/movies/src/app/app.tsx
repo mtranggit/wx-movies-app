@@ -1,15 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
-
-import NxWelcome from './nx-welcome';
+import { MoviesContent } from '@wx-movies-app/movies-content';
 
 export function App() {
   return (
-    <>
-      <NxWelcome title="movies" />
-
-      <div />
-    </>
+    <MoviesContent />
   );
 }
 
