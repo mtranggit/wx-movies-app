@@ -65,6 +65,7 @@ export const AppShell: React.FunctionComponent<{
           withNormalizeCSS
           theme={{
             colorScheme,
+            loader: 'bars'
           }}
         >
           <MantineAppShell
