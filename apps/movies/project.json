@@ -51,7 +51,8 @@
       "options": {
         "buildTarget": "movies:build",
         "hmr": true,
-        "port": 4201
+        "port": 4201,
+        "proxyConfig": "apps/movies/proxy.conf.json"
       },
       "configurations": {
         "development": {
