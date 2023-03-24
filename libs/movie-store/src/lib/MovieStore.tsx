@@ -1,14 +1,12 @@
+import { Movie } from "@wx-movies-app/api-interface";
 import {create} from "zustand";
 
-export type Movie = {
-  title: string;
-  image: string;
-};
-
-export const useMovieStore = create<{
+type MovieStore = {
   movies: Movie[];
   addMovie: (movie: Movie) => void;
-}>((set) => ({
+};
+
+export const useMovieStore = create<MovieStore>((set) => ({
   movies: [],
   addMovie: (movie) => set((state) => ({ movies: [...state.movies, movie] })),
 }));

@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@wx-movies-app/api-interface": ["libs/api-interface/src/index.ts"],
       "@wx-movies-app/movie-store": ["libs/movie-store/src/index.ts"],
       "@wx-movies-app/movies-content": ["libs/movies-content/src/index.ts"],
       "@wx-movies-app/playlist-content": ["libs/playlist-content/src/index.ts"],
