@@ -6,7 +6,7 @@
 import { ApiResponse, API_URL } from '@wx-movies-app/api-interface';
 import express from 'express';
 import * as path from 'path';
-import {movies, moviesAsyncData} from './getMovies';
+import {moviesAsyncData} from './getMovies';
 
 const app = express();
 
