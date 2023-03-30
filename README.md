@@ -40,5 +40,6 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 
 To serve our Micro Frontends app in development mode:
 
-- App shell with static build movies, playlist `npx nx serve shell`
-- App shell with dynamic build movies, playlist `npx nx serve shell --devRemotes=movies,playlist`
+- Start up api server `npx nx serve api`, then run app shell in either with static build or dynamic build of movies and playlist.
+  - Run app shell with static build movies, playlist `npx nx serve shell`
+  - Run app shell with dynamic build movies, playlist `npx nx serve shell --devRemotes=movies,playlist`
