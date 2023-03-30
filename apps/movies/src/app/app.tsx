@@ -4,11 +4,13 @@ import { MoviesContent } from '@wx-movies-app/movies-content';
 import React, {useState, useEffect} from 'react';
 import { Center, Loader } from '@mantine/core';
 
+const useProxy = true; // false to use cors
+const movieAPIUrl = useProxy ? API_URL_MOVIES :  `http://localhost:3333${API_URL_MOVIES}`;
 export function App() {
   const [movies, setMovies] = useState<Movie[]|undefined>(undefined);
 
   useEffect(() => {
-    fetch(API_URL_MOVIES)
+    fetch(movieAPIUrl)
       .then(r => r.json())
       .then(setMovies)
   },[]);

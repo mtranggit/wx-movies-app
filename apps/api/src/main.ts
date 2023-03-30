@@ -7,8 +7,10 @@ import { ApiResponse, API_URL } from '@wx-movies-app/api-interface';
 import express from 'express';
 import * as path from 'path';
 import {moviesAsyncData} from './getMovies';
+import cors from 'cors';
 
 const app = express();
+app.use(cors());
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
