@@ -4,6 +4,9 @@ import { MoviesContent } from '@wx-movies-app/movies-content';
 import React, {useState, useEffect} from 'react';
 import { Center, Loader } from '@mantine/core';
 
+
+const MoviesCarousel = React.lazy(() => import('carousel/Module'));
+
 const useProxy = true; // false to use cors
 const movieAPIUrl = useProxy ? API_URL_MOVIES :  `http://localhost:3333${API_URL_MOVIES}`;
 export function App() {
@@ -32,7 +35,12 @@ export function App() {
   }
 
   return (
-    <MoviesContent movies={movies}/>
+    <>
+      <React.Suspense fallback={<div>Movies carousel loading</div>}>
+        <MoviesCarousel /> 
+      </React.Suspense>
+      <MoviesContent movies={movies}/>
+    </>
   );
 }
 
