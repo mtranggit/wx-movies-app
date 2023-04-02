@@ -3,7 +3,7 @@ import { ApiResponse, API_URL, API_URL_MOVIES, Movie } from '@wx-movies-app/api-
 import { MoviesContent } from '@wx-movies-app/movies-content';
 import React, {useState, useEffect} from 'react';
 import { Center, Loader } from '@mantine/core';
-
+import ErrorBoundary from './error-boundary';
 
 const MoviesCarousel = React.lazy(() => import('carousel/Module'));
 
@@ -36,9 +36,11 @@ export function App() {
 
   return (
     <>
-      <React.Suspense fallback={<div>Movies carousel loading</div>}>
-        <MoviesCarousel /> 
-      </React.Suspense>
+      <ErrorBoundary errorMessage="Unable to load Movies Carousel">
+        <React.Suspense fallback={<div>Movies carousel loading</div>}>
+          <MoviesCarousel /> 
+        </React.Suspense>
+      </ErrorBoundary>
       <MoviesContent movies={movies}/>
     </>
   );
