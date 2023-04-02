@@ -9,6 +9,7 @@ const MoviesCarousel = React.lazy(() => import('carousel/Module'));
 
 const useProxy = true; // false to use cors
 const movieAPIUrl = useProxy ? API_URL_MOVIES :  `http://localhost:3333${API_URL_MOVIES}`;
+
 export function App() {
   const [movies, setMovies] = useState<Movie[]|undefined>(undefined);
 
@@ -36,10 +37,8 @@ export function App() {
 
   return (
     <>
-      <ErrorBoundary errorMessage="Unable to load Movies Carousel">
-        <React.Suspense fallback={<div>Movies carousel loading</div>}>
-          <MoviesCarousel /> 
-        </React.Suspense>
+      <ErrorBoundary errorMessage='Unable to load Movies Carousel' delayed={<>Loading</>}>
+        <MoviesCarousel /> 
       </ErrorBoundary>
       <MoviesContent movies={movies}/>
     </>

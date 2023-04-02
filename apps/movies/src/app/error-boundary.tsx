@@ -1,34 +1,40 @@
 import React, { Component, ErrorInfo, ReactNode } from "react";
 
 interface Props {
-    children: ReactNode;
-    errorMessage: string;
+  children: ReactNode;
+  errorMessage?: string;
+  delayed?: ReactNode;
 }
 
 interface State {
-    hasError: boolean;
+  hasError: boolean;
 }
 
 class ErrorBoundary extends Component<Props, State> {
-    public state: State = {
-        hasError: false
-    };
+  constructor(props: Props) {
+    super(props);
+    this.state = { hasError: false };
+  }
 
-    public static getDerivedStateFromError(_: Error): State {
-        return { hasError: true };
+  static getDerivedStateFromError(_: Error): State {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.error("Uncaught error:", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.errorMessage || <span>Something went wrong</span>;
     }
 
-    public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-        console.error("Uncaught error:", error, errorInfo);
-    }
-
-    public render() {
-        if (this.state.hasError) {
-            return <span>{this.props.errorMessage}</span>;
-        }
-
-        return this.props.children;
-    }
+    return (
+      <React.Suspense fallback={this.props.delayed || <div />}>
+        {this.props.children}
+      </React.Suspense>
+    );
+  }
 }
 
 export default ErrorBoundary;
