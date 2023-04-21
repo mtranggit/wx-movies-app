@@ -40,6 +40,11 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 
 To serve our Micro Frontends app in development mode:
 
+- Before you run this movies app, please first clone the movies carousel app available from [Movies Carousel](https://github.com/mtranggit/movies-carousel), then run it in a separate terminal with `npx nx serve carousel`
+- To run everything from the Wx-Movies-App, in the terminal type `npx nx run-many --target=serve --projects=api,shell,movies,playlist --parallel --maxParallel=10`
+
+Or you can start up each app separately
+
 - Start up api server `npx nx serve api`, then run app shell in either with static build or dynamic build of movies and playlist.
   - Run app shell with static build movies, playlist `npx nx serve shell`
   - Run app shell with dynamic build movies, playlist `npx nx serve shell --devRemotes=movies,playlist`
