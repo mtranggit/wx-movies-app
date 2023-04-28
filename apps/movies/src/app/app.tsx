@@ -2,8 +2,9 @@
 import { ApiResponse, API_URL, API_URL_MOVIES, Movie } from '@wx-movies-app/api-interface';
 import { MoviesContent } from '@wx-movies-app/movies-content';
 import React, {useState, useEffect} from 'react';
-import { Center, Loader } from '@mantine/core';
+import { Center, Loader, Box } from '@mantine/core';
 import { ErrorBoundary } from '@wx-movies-app/ui/app-shell';
+import { MFE_BORDER } from '../constants';
 
 const MoviesCarousel = React.lazy(() => import('carousel/Module'));
 
@@ -40,7 +41,9 @@ export function App() {
       <ErrorBoundary errorMessage='Unable to load Movies Carousel' delayed={<>Loading</>}>
         <MoviesCarousel /> 
       </ErrorBoundary>
-      <MoviesContent movies={movies}/>
+      <Box sx={{border: `${MFE_BORDER}`, padding: '1rem', marginTop: '1rem'}}>
+        <MoviesContent movies={movies}/>
+      </Box>
     </>
   );
 }
