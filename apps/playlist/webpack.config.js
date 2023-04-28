@@ -6,9 +6,6 @@ const baseConfig = require('./module-federation.config');
 
 const config = {
   ...baseConfig,
-  remotes: [
-    ['carousel', 'http://localhost:8080/remoteEntry.js']
-  ]
 };
 
 // Nx plugins for webpack to build config object from Nx options and context.
