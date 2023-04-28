@@ -47,6 +47,6 @@ export const movies: Movie[] = [
 
 
 export const moviesAsyncData = async() => {
-  await pause(1000); // simulate delay
+  await pause(300); // simulate delay
   return movies;
 };
